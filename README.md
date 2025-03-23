@@ -8,5 +8,5 @@ onnxruntime(1.15.1): https://github.com/microsoft/onnxruntime.git
 
 # Supported Train Code
 ## DET
-MMYOLO: https://github.com/open-mmlab/mmyolo.git
-ultralytics: https://github.com/ultralytics/ultralytics
+MMYOLO: https://github.com/open-mmlab/mmyolo.git  
+ultralytics: https://github.com/ultralytics/ultralytics  
