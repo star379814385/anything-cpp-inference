@@ -1,6 +1,5 @@
 #include "BaseInference.h"
 
-
 bool BaseInference::update_from_config(const std::string modelDir)
 {
     const std::string configPath = modelDir + "/config.json";

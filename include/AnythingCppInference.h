@@ -8,7 +8,7 @@ namespace ACI
         Det_ONNX_UltralyticsYolo = 1
     };
 
-    bool InitModel(BaseInference *&handle, int model_type, char *config_dir);
+    bool InitModel(BaseInference *&handle, const int model_type, const char *config_dir);
     bool Inference(BaseInference *handle, const AiData::InnerModelInput &input, AiData::InnerModelOutput &output);
     bool Inference(BaseInference *handle, const std::vector<AiData::InnerModelInput> &input, std::vector<AiData::InnerModelOutput> &output);
 

@@ -32,7 +32,7 @@ namespace myutils
         }
         ~JsonData() {};
 
-    public:
+        public:
         Json::Value root;
     };
 

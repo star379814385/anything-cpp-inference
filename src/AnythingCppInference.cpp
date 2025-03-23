@@ -1,19 +1,25 @@
 #include "AnythingCppInference.h"
 #ifdef USE_ONNX_H
-#include "onnx/MMYoloONNXInference.h"
+#include "MMYoloONNXInference.h"
+#include "UltralyticsONNXInference.h"
 #endif
 
-bool ACI::InitModel(BaseInference *&handle, int model_type, char *config_dir)
+bool ACI::InitModel(BaseInference *&handle, const int model_type, const char *config_dir)
 {
 #ifdef USE_ONNX_H
-    if (model_type == ModelType::MMYOLO)
+    if (model_type == ModelType::Det_ONNX_MMYOLO)
     {
         handle = new MMYoloONNXInference();
     }
+    else if (model_type == ModelType::Det_ONNX_UltralyticsYolo)
+    {
+        handle = new UltralyticsONNXInference();
+    }
+    
 #endif
     if (handle == nullptr)
         return false;
-    return handle->load_model(config_dir);
+    return handle->load_model(std::string(config_dir));
 }
 
 bool ACI::Inference(BaseInference *handle, const AiData::InnerModelInput &input, AiData::InnerModelOutput &output)

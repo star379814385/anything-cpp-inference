@@ -13,7 +13,12 @@ class ONNXInference : public BaseInference
 {
 public:
     ONNXInference() {};
-    ~ONNXInference() {};
+    ~ONNXInference() {
+        if(session != nullptr)
+        {
+            delete session;
+        }
+    };
     virtual bool inference(const AiData::InnerModelInput &input, AiData::InnerModelOutput &output) override;
     virtual bool inference(const std::vector<AiData::InnerModelInput> &inputs, std::vector<AiData::InnerModelOutput> &outputs) override;
 
