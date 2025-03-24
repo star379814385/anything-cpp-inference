@@ -8,6 +8,11 @@ namespace AiData{
         float* scores; 
         int* labels;
     }DetResult;
+    typedef struct ClsResult
+    {
+        int label_id;
+        char* label_name;
+    }ClsResult;
 
     typedef struct InnerModelInput
     {
@@ -17,6 +22,8 @@ namespace AiData{
     typedef struct InnerModelOutput
     {
         DetResult det_result;
+        ClsResult cls_result;
+
     }InnerModelOutput;
 
 };

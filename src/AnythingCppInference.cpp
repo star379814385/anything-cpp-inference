@@ -2,6 +2,7 @@
 #ifdef USE_ONNX_H
 #include "MMYoloONNXInference.h"
 #include "UltralyticsONNXInference.h"
+#include "TimmONNXInference.h"
 #endif
 
 bool ACI::InitModel(BaseInference *&handle, const int model_type, const char *config_dir)
@@ -15,7 +16,11 @@ bool ACI::InitModel(BaseInference *&handle, const int model_type, const char *co
     {
         handle = new UltralyticsONNXInference();
     }
-    
+    else if (model_type == ModelType::Cls_ONNX_TIMM)
+    {
+        handle = new TimmONNXInference();
+    }
+
 #endif
     if (handle == nullptr)
         return false;

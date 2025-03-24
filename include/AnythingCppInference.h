@@ -5,7 +5,8 @@ namespace ACI
     enum ModelType
     {
         Det_ONNX_MMYOLO = 0,
-        Det_ONNX_UltralyticsYolo = 1
+        Det_ONNX_UltralyticsYolo = 1,
+        Cls_ONNX_TIMM = 2
     };
 
     bool InitModel(BaseInference *&handle, const int model_type, const char *config_dir);
