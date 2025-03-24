@@ -29,6 +29,6 @@ protected:
     };
 
 protected:
-    virtual bool decode_result(const std::vector<Ort::Value> &onnx_output, std::vector<AiData::InnerModelOutput> &outputs);
+    virtual bool decode_result(const std::vector<Ort::Value> &onnx_output, std::vector<AiData::InnerModelOutput> &outputs) override;
     float m_scoreThr;
 };
